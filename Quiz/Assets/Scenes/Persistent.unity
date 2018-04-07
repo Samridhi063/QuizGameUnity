@@ -220,8 +220,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   allRoundData:
   - name: Round Zero
-    timeInSeconds: 30
-    timeLimitInSeconds: 10
+    timeInSeconds: 60
+    timeLimitInSeconds: 30
     pointsAddedForCorrectAnswer: 10
     questions:
     - questionText: In which year of First World War Germany declared war on Russia

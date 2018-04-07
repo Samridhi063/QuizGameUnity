@@ -15,9 +15,7 @@ public class GameController : MonoBehaviour {
 	public GameObject questionDisplay;
 	public GameObject roundEndDisplay;
 	public Text resultText;
-
-
-	private DataController dataController;
+    private DataController dataController;
 	private RoundData currentRoundData;
 	private QuestionDta[] questionPool;
 
@@ -43,16 +41,14 @@ public class GameController : MonoBehaviour {
 		isRoundActive = true;
 
 	}
-
 	private void ShowQuestion()
 	{
 		RemoveAnswerButtons ();
 		QuestionDta questionData = questionPool [questionIndex];
 		questionDisplayText.text = questionData.questionText;
-
-		for (int i = 0; i < questionData.answers.Length; i++) 
+        for (int i = 0; i < questionData.answers.Length; i++) 
 		{
-			GameObject answerButtonGameObject = answerButtonObjectPool.GetObject();
+            GameObject answerButtonGameObject = answerButtonObjectPool.GetObject();
 			answerButtonGameObjects.Add(answerButtonGameObject);
 			answerButtonGameObject.transform.SetParent(answerButtonParent);
 
@@ -71,13 +67,12 @@ public class GameController : MonoBehaviour {
 	}
 
 	public void AnswerButtonClicked(bool isCorrect)
-	{
-		if (isCorrect) 
+	{        
+        if (isCorrect) 
 		{
 			playerScore += currentRoundData.pointsAddedForCorrectAnswer;
-			scoreDisplayText.text = "Score: " + playerScore.ToString();
-		}
-
+			scoreDisplayText.text = "Score: " + playerScore.ToString();                        
+		}       
 		if (questionPool.Length > questionIndex + 1) {
 			questionIndex++;
 			ShowQuestion ();
@@ -92,11 +87,10 @@ public class GameController : MonoBehaviour {
 	public void EndRound()
 	{
 		isRoundActive = false;
-
 		questionDisplay.SetActive (false);
 		roundEndDisplay.SetActive (true);
 
-		resultText.text = "Your Score: " + playerScore.ToString();
+        resultText.text = "Your Score: " + playerScore.ToString();
 
 	}
 
